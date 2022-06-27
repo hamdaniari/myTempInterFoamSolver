@@ -22,20 +22,20 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 Class
-    Foam::immiscibleIncompressibleTwoPhaseMixture
+    Foam::myTempImmiscibleIncompressibleTwoPhaseMixture
 
 Description
     An immiscible incompressible two-phase mixture transport model
 
 SourceFiles
-    immiscibleIncompressibleTwoPhaseMixture.C
+    myTempImmiscibleIncompressibleTwoPhaseMixture.C
 
 \*---------------------------------------------------------------------------*/
 
-#ifndef immiscibleIncompressibleTwoPhaseMixture_H
-#define immiscibleIncompressibleTwoPhaseMixture_H
+#ifndef myTempImmiscibleIncompressibleTwoPhaseMixture_H
+#define myTempImmiscibleIncompressibleTwoPhaseMixture_H
 
-#include "incompressibleTwoPhaseMixture.H"
+#include "myTempIncompressibleTwoPhaseMixture.H"
 #include "interfaceProperties.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -44,12 +44,12 @@ namespace Foam
 {
 
 /*---------------------------------------------------------------------------*\
-           Class immiscibleIncompressibleTwoPhaseMixture Declaration
+           Class myTempImmiscibleIncompressibleTwoPhaseMixture Declaration
 \*---------------------------------------------------------------------------*/
 
-class immiscibleIncompressibleTwoPhaseMixture
+class myTempImmiscibleIncompressibleTwoPhaseMixture
 :
-    public incompressibleTwoPhaseMixture,
+    public myTempIncompressibleTwoPhaseMixture,
     public interfaceProperties
 {
 
@@ -58,7 +58,7 @@ public:
     // Constructors
 
         //- Construct from components
-        immiscibleIncompressibleTwoPhaseMixture
+        myTempImmiscibleIncompressibleTwoPhaseMixture
         (
             const volVectorField& U,
             const surfaceScalarField& phi
@@ -66,7 +66,7 @@ public:
 
 
     //- Destructor
-    virtual ~immiscibleIncompressibleTwoPhaseMixture()
+    virtual ~myTempImmiscibleIncompressibleTwoPhaseMixture()
     {}
 
 
@@ -75,7 +75,7 @@ public:
         //- Correct the transport and interface properties
         virtual void correct()
         {
-            incompressibleTwoPhaseMixture::correct();
+            myTempIncompressibleTwoPhaseMixture::correct();
             interfaceProperties::correct();
         }
 

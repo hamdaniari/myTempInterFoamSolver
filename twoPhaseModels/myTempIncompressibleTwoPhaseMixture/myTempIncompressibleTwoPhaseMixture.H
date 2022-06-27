@@ -22,18 +22,18 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 Class
-    Foam::incompressibleTwoPhaseMixture
+    Foam::myTempIncompressibleTwoPhaseMixture
 
 Description
     A two-phase incompressible transportModel
 
 SourceFiles
-    incompressibleTwoPhaseMixture.C
+    myTempIncompressibleTwoPhaseMixture.C
 
 \*---------------------------------------------------------------------------*/
 
-#ifndef incompressibleTwoPhaseMixture_H
-#define incompressibleTwoPhaseMixture_H
+#ifndef myTempIncompressibleTwoPhaseMixture_H
+#define myTempIncompressibleTwoPhaseMixture_H
 
 #include "kinematicTransportModel.H"
 #include "viscosityModel.H"
@@ -47,10 +47,10 @@ namespace Foam
 {
 
 /*---------------------------------------------------------------------------*\
-                Class incompressibleTwoPhaseMixture Declaration
+                Class myTempIncompressibleTwoPhaseMixture Declaration
 \*---------------------------------------------------------------------------*/
 
-class incompressibleTwoPhaseMixture
+class myTempIncompressibleTwoPhaseMixture
 :
     public IOdictionary,
     public kinematicTransportModel,
@@ -80,13 +80,13 @@ protected:
 
 public:
 
-    TypeName("incompressibleTwoPhaseMixture");
+    TypeName("myTempIncompressibleTwoPhaseMixture");
 
 
     // Constructors
 
         //- Construct from components
-        incompressibleTwoPhaseMixture
+        myTempIncompressibleTwoPhaseMixture
         (
             const volVectorField& U,
             const surfaceScalarField& phi
@@ -94,7 +94,7 @@ public:
 
 
     //- Destructor
-    virtual ~incompressibleTwoPhaseMixture()
+    virtual ~myTempIncompressibleTwoPhaseMixture()
     {}
 
 

@@ -7,6 +7,9 @@
         "fvSolution": "cpp",
         "transportProperties": "cpp",
         "incompressibleTwoPhaseMixture.C": "cpp",
-        "interFoam.C": "cpp"
+        "interFoam.C": "cpp",
+        "myTempIncompressibleTwoPhaseMixture.C": "cpp",
+        "immiscibleIncompressibleTwoPhaseMixture.C": "cpp",
+        "myTempImmiscibleIncompressibleTwoPhaseMixture.C": "cpp"
     }
 }

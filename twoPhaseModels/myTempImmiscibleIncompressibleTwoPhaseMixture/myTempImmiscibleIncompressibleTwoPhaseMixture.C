@@ -23,29 +23,29 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "immiscibleIncompressibleTwoPhaseMixture.H"
+#include "myTempImmiscibleIncompressibleTwoPhaseMixture.H"
 
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
-Foam::immiscibleIncompressibleTwoPhaseMixture::
-immiscibleIncompressibleTwoPhaseMixture
+Foam::myTempImmiscibleIncompressibleTwoPhaseMixture::
+myTempImmiscibleIncompressibleTwoPhaseMixture
 (
     const volVectorField& U,
     const surfaceScalarField& phi
 )
 :
-    incompressibleTwoPhaseMixture(U, phi),
+    myTempIncompressibleTwoPhaseMixture(U, phi),
     interfaceProperties(alpha1(), alpha2(), U, *this)
 {}
 
 
 // * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * * //
 
-bool Foam::immiscibleIncompressibleTwoPhaseMixture::read()
+bool Foam::myTempImmiscibleIncompressibleTwoPhaseMixture::read()
 {
     return
-        incompressibleTwoPhaseMixture::read()
+        myTempIncompressibleTwoPhaseMixture::read()
      && interfaceProperties::read();
 }
 

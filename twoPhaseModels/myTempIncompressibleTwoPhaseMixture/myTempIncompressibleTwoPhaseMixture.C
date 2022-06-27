@@ -23,7 +23,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "incompressibleTwoPhaseMixture.H"
+#include "myTempIncompressibleTwoPhaseMixture.H"
 #include "addToRunTimeSelectionTable.H"
 #include "surfaceFields.H"
 #include "fvc.H"
@@ -32,13 +32,13 @@ License
 
 namespace Foam
 {
-    defineTypeNameAndDebug(incompressibleTwoPhaseMixture, 0);
+    defineTypeNameAndDebug(myTempIncompressibleTwoPhaseMixture, 0);
 }
 
 
 // * * * * * * * * * * * Protected Member Functions  * * * * * * * * * * * * //
 
-void Foam::incompressibleTwoPhaseMixture::calcNu()
+void Foam::myTempIncompressibleTwoPhaseMixture::calcNu()
 {
     nuModel1_->correct();
     nuModel2_->correct();
@@ -56,7 +56,7 @@ void Foam::incompressibleTwoPhaseMixture::calcNu()
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
-Foam::incompressibleTwoPhaseMixture::incompressibleTwoPhaseMixture
+Foam::myTempIncompressibleTwoPhaseMixture::myTempIncompressibleTwoPhaseMixture
 (
     const volVectorField& U,
     const surfaceScalarField& phi
@@ -122,7 +122,7 @@ Foam::incompressibleTwoPhaseMixture::incompressibleTwoPhaseMixture
 // * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * * //
 
 Foam::tmp<Foam::volScalarField>
-Foam::incompressibleTwoPhaseMixture::mu() const
+Foam::myTempIncompressibleTwoPhaseMixture::mu() const
 {
     const volScalarField limitedAlpha1
     (
@@ -139,7 +139,7 @@ Foam::incompressibleTwoPhaseMixture::mu() const
 
 
 Foam::tmp<Foam::surfaceScalarField>
-Foam::incompressibleTwoPhaseMixture::muf() const
+Foam::myTempIncompressibleTwoPhaseMixture::muf() const
 {
     const surfaceScalarField alpha1f
     (
@@ -156,7 +156,7 @@ Foam::incompressibleTwoPhaseMixture::muf() const
 
 
 Foam::tmp<Foam::surfaceScalarField>
-Foam::incompressibleTwoPhaseMixture::nuf() const
+Foam::myTempIncompressibleTwoPhaseMixture::nuf() const
 {
     const surfaceScalarField alpha1f
     (
@@ -174,7 +174,7 @@ Foam::incompressibleTwoPhaseMixture::nuf() const
 }
 
 
-bool Foam::incompressibleTwoPhaseMixture::read()
+bool Foam::myTempIncompressibleTwoPhaseMixture::read()
 {
     if (regIOobject::read())
     {
